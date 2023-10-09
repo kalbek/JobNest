@@ -9,3 +9,85 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// User Model
+model User {
+  id       Int      @id @default(autoincrement())
+  username String
+  email    String   @unique
+  password String   // Hashed password
+}
+
+// Job Posting Model
+model JobPosting {
+  id          Int      @id @default(autoincrement())
+  title       String
+  company     String
+  description String
+  location    String
+  salary      String
+  deadline    DateTime
+  url         String
+}
+
+// Website Model
+model Website {
+  id            Int      @id @default(autoincrement())
+  name          String
+  urlPattern    String   @unique
+}
+
+// Notification Model
+model Notification {
+  id        Int      @id @default(autoincrement())
+  type      String
+  content   String
+  timestamp DateTime
+}
+
+// Saved Search Model
+model SavedSearch {
+  id       Int      @id @default(autoincrement())
+  criteria String
+}
+
+// User Activity Model
+model UserActivity {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  action    String
+  timestamp DateTime
+}
+
+// Analytics Model
+model Analytics {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  action    String
+  timestamp DateTime
+}
+
+// Feedback Model
+model Feedback {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  content   String
+  type      String
+  timestamp DateTime
+}
+
+// Authentication Tokens Model
+model AuthToken {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  token     String
+  expiration DateTime
+}
+
+// Job Board Integration Model
+model JobBoardIntegration {
+  id        Int      @id @default(autoincrement())
+  name      String
+  apiKey    String
+  secretKey String
+}
