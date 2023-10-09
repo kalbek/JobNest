@@ -1,0 +1,18 @@
+{
+  "name": "jobnest",
+  "version": "1.0.0",
+  "description": "JobNest🪹 is your essential browser extension for turbocharging your job search. It automatically detects job postings on websites, customizes notifications to your preferences, and keeps you informed in real-time. Say goodbye to manual searching and hello to a smarter, more efficient job hunt with JobNest🪹.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.8.3",
+    "prisma": "^5.4.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
